@@ -8,18 +8,26 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
     <style>
       #banner {
-        height: 360px; width: 100%
+        height: 360px; width: 100%; margin-bottom: 16px
       } 
     </style>
   </head>
-    <body class="container">
-    <div>
-      <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
+    <body>
+      {% include 'nav.html'%}
       <img class="img-fluid" id="banner" src="https://jovian-careers-website.mojolaban.repl.co/static/banner.jpg">
-      <h2 class="text-center mt-2 mb-4">About Jovian</h2>
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
+      <div class="row" style="margin-bottom:16px">
+        <div class='col-md-6'>
       <p class="lead">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur. Risus quis varius quam quisque id. Molestie nunc non blandit massa enim nec. Ullamcorper morbi tincidunt ornare massa. Congue quisque egestas diam in arcu cursus euismod quis viverra. Sed risus ultricies tristique nulla aliquet enim tortor at auctor. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. Non sodales neque sodales ut etiam sit amet. Adipiscing diam donec adipiscing tristique risus nec. Nulla facilisi morbi tempus iaculis urna id volutpat.
       </p>
+        </div>
+        <div class='d-none d-md-block col-md-6'>
+        <img src="/static/people.jpg" style = "height:320px;border-radius=4px">
+        </div>
+      </div>
+        
       <h2 class="text-center mt-2 mb-4">Job Openings</h2>
       <div>
         {% for job in jobs%}
@@ -27,11 +35,9 @@
         {% endfor %}
       </div>
       <div class="text-center">
-      <button class="btn btn-primary">Contact Us</button>
-        <p class="mt-4">
-          Copyright 2023, Jovian
-        </p>
+      <a class="btn btn-primary" href="mailto:hello@jovian.ai?subject=Question%20about%20Job%20Openings&body=My%20name%3A%20%3Cyour%20name%3E%0D%0A%0D%0AMy%20question%3A%20%3Center%20your%20question%20here%3E">Contact Us</a>
       </div>
     </div>
+       {% include 'footer.html'%}
   </body>
 </html>
