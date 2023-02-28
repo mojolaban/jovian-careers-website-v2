@@ -14,14 +14,18 @@
   </head>
     <body class="container">
     <div>
-      <h1 class="text-center mt-2 mb-4">Jovian Careers</h1>
+      <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
       <img class="img-fluid" id="banner" src="https://jovian-careers-website.mojolaban.repl.co/static/banner.jpg">
       <h2 class="text-center mt-2 mb-4">About Jovian</h2>
       <p class="lead">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur. Risus quis varius quam quisque id. Molestie nunc non blandit massa enim nec. Ullamcorper morbi tincidunt ornare massa. Congue quisque egestas diam in arcu cursus euismod quis viverra. Sed risus ultricies tristique nulla aliquet enim tortor at auctor. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. Non sodales neque sodales ut etiam sit amet. Adipiscing diam donec adipiscing tristique risus nec. Nulla facilisi morbi tempus iaculis urna id volutpat.
       </p>
       <h2 class="text-center mt-2 mb-4">Open Positions</h2>
-      <p>TODO - Show jobs here</p>
+      <div>
+        {% for job in jobs%}
+          {%include 'jobitem.html'%}
+        {% endfor %}
+      </div>
       <div class="text-center">
       <button class="btn btn-primary">Contact Us</button>
         <p class="mt-4">
